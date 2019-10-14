@@ -2,15 +2,6 @@
 opencv+mtcnn+facenet+python+tensorflow 实现实时人脸识别
 
 Abstract:本文记录了在学习深度学习过程中，使用opencv+mtcnn+facenet+python+tensorflow，开发环境为ubuntu18.04，实现局域网连接手机摄像头，对目标人员进行实时人脸识别，效果并非特别好，会继续改进
-
-这里是
-
-
-
-* [项目地址](https://github.com/WindZu/facenet_facerecognition) 
-* [项目中用到的大文件地址](https://www.jianguoyun.com/p/DQO6-24QovDTBhj3iWk) 
-* [项目详解](https://segmentfault.com/a/1190000015917420)
-
 如果各位老爷看完觉得对你有帮助的话，请给个小星星，3q
 
 
@@ -18,37 +9,12 @@ Abstract:本文记录了在学习深度学习过程中，使用opencv+mtcnn+face
 
 ### 目录结构
 
-![2018-08-07 13-42-33屏幕截图.png](https://i.loli.net/2018/08/07/5b6934703c4b1.png)
-
-![2018-08-07 14-19-28屏幕截图.png](https://i.loli.net/2018/08/07/5b693a0408c47.png)
-
 * 20170512-110547文件夹是facent的模型，官方存放在google网盘上了（而且现在出来2018的预训练模型了），不方便下载的我一会儿会把用到的大文件打包放在坚果云上
 * align文件中包含三个mtcnn要用到的模型，以及搭建mtcnn网络的文件 `detect_face.py`,这里面的东西在facenet的项目中的都可以找到
 * models中存放的是训练好的knn模型，用于测试使用的简单模型，一会儿展示的效果也是由其完成
 * `train_dir` 顾名思义，就不解释了
 * `facenet.py`就是一直在谈的东西，其中包含了如何搭建facenet网络，以及计算的内容
-* `test.py` `train_knn.py` `temp_test.py` `imageconvert.py`这几个文件分别`人脸识别测试` 、 `训练knn模型 ` 、 `遇到问题是精简代码调试使用` 、 `图像批量转化 用于准备数据集`   其他的没有谈及的文件都没有使用到，应该是以前测试时候忘记删除的
-
-
-
-### 运行效果
-
-
-![2018-08-07 13-22-35 的屏幕截图.png](https://i.loli.net/2018/08/07/5b693d30976c9.png)
-
-这是使用手机摄像头拍摄ipad从网上随便搜来的合照进行测试（也许也不是随便搜的...），能够准确将人脸框出，并进行识别，因为我使用的是knn训练的，而这几个人是未经过特殊训练的，所以将其归结为未知人群，再接下来一段时间会对其进行改进，最终效果应该是可以实现单张图片数据库比对，这样就不用对需要识别的目标每一个都训练一遍了，这也是人脸识别要达到的效果，上面所说的triplet loss就是一种很好的方法
-
-
-
-
-![2018-08-07 14-44-23 的屏幕截图.png](https://i.loli.net/2018/08/07/5b693febef1fa.png)
-
-因为房间光线比较暗，用手机摄像头拍摄以前的自拍，识别成功
-
-
-
-
-
+* `test.py` `train_knn.py` `temp_test.pyimageconvert.py`这几个文件分别`人脸识别测试` 、 `训练knn模型 ` 、 `遇到问题是精简代码调试使用` 、 `图像批量转化 用于准备数据集`   其他的没有谈及的文件都没有使用到，应该是以前测试时
 ### 运行环境和运行说明
 
 1. 推荐使用Anaconda配置tensorflow环境（因为本项目就是基于tensorflow框架的），是cpu版本（等新卡，其实就是穷...）网上教程很多，也很简单，本环境的python版本是3.6的，如果你的是2.7的话，那就要改很多东西了（跟着报错改就ok），但何不如再安装个3.6的呢，在anaconda下真的是超级方便
@@ -119,10 +85,6 @@ Abstract:本文记录了在学习深度学习过程中，使用opencv+mtcnn+face
 
   > calculate_dection_face.py : 代码中已经注明了有些路径自己要更改一下，先执行此脚本，进行人脸定位切割（有点残忍的感觉）
   >
-  > new_face_recognition.py : 直接执行即可，此次默认使用的是电脑自带的摄像头（如果要使用手机的，自己改一下，还是以前方法），路径也要注意
-
-### 注意事项
-
-此次代码中的路径我使用的都是绝对路径，所以要根据自己的路径更改一下
+  > new_face_recognition.py : 直接执行即可，此次默认使用的是电脑自带的摄像头（如果要使用手机的，自己改一下
 
 github地址:https://github.com/WindZu/facenet_facerecognition 如果觉得有用，给个小星星啦，我会很开心的：）
