@@ -86,5 +86,3 @@ Abstract:本文记录了在学习深度学习过程中，使用opencv+mtcnn+face
   > calculate_dection_face.py : 代码中已经注明了有些路径自己要更改一下，先执行此脚本，进行人脸定位切割（有点残忍的感觉）
   >
   > new_face_recognition.py : 直接执行即可，此次默认使用的是电脑自带的摄像头（如果要使用手机的，自己改一下
-
-github地址:https://github.com/WindZu/facenet_facerecognition 如果觉得有用，给个小星星啦，我会很开心的：）
